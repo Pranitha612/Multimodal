@@ -12,8 +12,8 @@ class PersonDetector:
         
     def detect_persons(self, image_path):
         """Detect all persons in the image"""
-        # Increased conf further to 0.75 and lowered iou to 0.4 based on user feedback
-        results = self.model(image_path, conf=0.75, iou=0.4)
+        # Adjusted conf to 0.55 and iou to 0.65 to allow overlapping detections (hugging)
+        results = self.model(image_path, conf=0.55, iou=0.65)
         persons = []
         
         for result in results:
